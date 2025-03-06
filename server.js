@@ -2,11 +2,12 @@ const express = require("express");
 const cors =require("cors")
 require("dotenv").config();
 
-app.set('json spaces', 2);
 const PORT =process.env.PORT;
 const app = express();
 app.use(express.json());
 app.use(cors())
+app.set('json spaces', 2);
+
 const productsRouter = require('./lib/routers')
 const adminRouter= require('./lib/admitRouter')
 const connectDB = require("./lib/connection")
